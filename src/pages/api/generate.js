@@ -8,8 +8,8 @@ const openai = new OpenAIApi(configuration);
 export default async function (req, res) {
   const completion = await openai.createImage({
     prompt: req.body.text,
-    n: 6,
-    size: "1024x1024",
+    n: 2,
+    size: "512x512",
   });
   res.status(200).json({result: completion.data.data})
 }
